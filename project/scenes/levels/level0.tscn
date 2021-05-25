@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/flowers/flower.tscn" type="PackedScene" id=1]
+
+[node name="Level0" type="Node2D"]
+position = Vector2( 5.05109, 4.48984 )
+
+[node name="Flower" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72.5157, 123.978 )
+
+[node name="Flower2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 107.164, 123.271 )
+
+[node name="Flower3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 138.984, 123.271 )
+
+[node name="Flower4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 173.632, 124.685 )
+
+[node name="Flower5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 203.331, 122.563 )
+
+[node name="Flower6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 73.2229, 251.964 )
+
+[node name="Flower7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104.336, 251.257 )
+
+[node name="Flower8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 138.277, 251.964 )
+
+[node name="Flower9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 169.389, 252.671 )
+
+[node name="Flower10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 201.916, 251.964 )
+
+[node name="Flower11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 73.6269, 380.254 )
+
+[node name="Flower12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 107.481, 379.363 )
+
+[node name="Flower13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 141.335, 379.363 )
+
+[node name="Flower14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 169.844, 379.363 )
+
+[node name="Flower15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 201.025, 378.472 )
