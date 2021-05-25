@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/flower.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/flowers/Tulip.png" type="Texture" id=2]
@@ -18,6 +18,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
 [node name="Flower" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -34,4 +38,20 @@ anims/GROW = SubResource( 1 )
 [node name="TimerGrow" type="Timer" parent="."]
 one_shot = true
 
+[node name="SwipeControl" type="Node2D" parent="."]
+
+[node name="TouchButtonTop" type="TouchScreenButton" parent="SwipeControl"]
+position = Vector2( -12, -18 )
+scale = Vector2( 1.4, 1.4 )
+shape = SubResource( 2 )
+passby_press = true
+
+[node name="TouchButtonBottom" type="TouchScreenButton" parent="SwipeControl"]
+position = Vector2( -12, 34 )
+scale = Vector2( 1.4, 1.4 )
+shape = SubResource( 3 )
+passby_press = true
+
 [connection signal="timeout" from="TimerGrow" to="." method="_on_TimerGrow_timeout"]
+[connection signal="pressed" from="SwipeControl/TouchButtonTop" to="." method="_on_TouchButtonTop_pressed"]
+[connection signal="pressed" from="SwipeControl/TouchButtonBottom" to="." method="_on_TouchButtonBottom_pressed"]
