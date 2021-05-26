@@ -7,10 +7,15 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 var selected
 
+signal picked
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rng.randomize()
-	live()
+	if owner != null and owner.is_in_group("levels"):
+		self.connect("picked", owner, "_picked_handler")
+		rng.randomize()
+		live()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -20,8 +25,8 @@ func _on_TimerGrow_timeout():
 
 func _on_TouchButtonTop_pressed():
 	if selected:
-		#queue_free()
-		live()
+		$AnimationPlayer.play("PICK")
+		
 
 func _on_TouchButtonBottom_pressed():
 	selected = true
@@ -32,3 +37,15 @@ func live():
 	$TimerGrow.set_wait_time(random)
 	$TimerGrow.start()
 	selected = false
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	match anim_name:
+		"GROW":
+			$AnimationPlayer.play("IDLE")
+		"IDLE":
+			$AnimationPlayer.play("WILT")
+		"WILT":
+			live()
+		"PICK":
+			emit_signal("picked")
+			live()
