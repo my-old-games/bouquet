@@ -7,10 +7,9 @@
 [node name="Level0" type="Node2D" groups=[
 "levels",
 ]]
-position = Vector2( 5.05109, 4.48984 )
 script = ExtResource( 3 )
 flowers = [ ExtResource( 1 ) ]
-time = 10
+time = 60
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
@@ -63,9 +62,6 @@ position = Vector2( 64, 320 )
 
 [node name="Hole12" type="Position2D" parent="Holes"]
 position = Vector2( 96, 320 )
-
-[node name="Hole13" type="Position2D" parent="Holes"]
-position = Vector2( 112.532, 384 )
 
 [node name="Hole14" type="Position2D" parent="Holes"]
 position = Vector2( 128, 320 )

@@ -43,7 +43,7 @@ func _on_TouchButtonBottom_pressed():
 	selected = true
 
 func live():
-	var random = rng.randf_range(0.5, 4.0)
+	var random = rng.randf_range(0.5, 5.0)
 	$Sprite.frame = 0
 	$TimerGrow.set_wait_time(random)
 	$TimerGrow.start()
@@ -75,6 +75,7 @@ func tween_start(target_position):
 	$Tween.start()
 
 func _on_Tween_tween_completed(object, key):
-	pass
+	object.hide()
+	root_level.update_basket()
 
 
