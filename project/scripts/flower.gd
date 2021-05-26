@@ -7,13 +7,15 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 var selected
 
+onready var root_level = get_parent().get_parent()
+
 signal picked
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if owner != null and owner.is_in_group("levels"):
-		self.connect("picked", owner, "_picked_handler")
+	if root_level != null and root_level.is_in_group("levels"):
+		self.connect("picked", root_level, "_picked_handler")
 		rng.randomize()
 		live()
 
@@ -48,4 +50,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			live()
 		"PICK":
 			emit_signal("picked")
-			live()
+			$Tween.interpolate_property(self, "position",
+				self.position, root_level.basket_position, 1,
+				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			$Tween.start()
+		#live()
+
+func _on_Tween_tween_completed(object, key):
+	print(key)

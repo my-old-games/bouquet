@@ -18,7 +18,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "IDLE"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ 7, 8, 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "PICK"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "WILT"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -63,15 +63,15 @@ tracks/0/keys = {
 "values": [ 11, 12, 13, 14, 15 ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 
 [node name="Flower" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
+position = Vector2( 0, -32 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 5
@@ -79,9 +79,9 @@ vframes = 5
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 0.5
 anims/GROW = SubResource( 1 )
-anims/IDLE = SubResource( 4 )
-anims/PICK = SubResource( 6 )
-anims/WILT = SubResource( 5 )
+anims/IDLE = SubResource( 2 )
+anims/PICK = SubResource( 3 )
+anims/WILT = SubResource( 4 )
 
 [node name="TimerGrow" type="Timer" parent="."]
 one_shot = true
@@ -89,18 +89,19 @@ one_shot = true
 [node name="SwipeControl" type="Node2D" parent="."]
 
 [node name="TouchButtonTop" type="TouchScreenButton" parent="SwipeControl"]
-position = Vector2( -12, -18 )
-scale = Vector2( 1.4, 1.4 )
-shape = SubResource( 2 )
+position = Vector2( -10, -50 )
+shape = SubResource( 5 )
 passby_press = true
 
 [node name="TouchButtonBottom" type="TouchScreenButton" parent="SwipeControl"]
-position = Vector2( -12, 34 )
-scale = Vector2( 1.4, 1.4 )
-shape = SubResource( 3 )
+position = Vector2( -10, -20 )
+shape = SubResource( 6 )
 passby_press = true
+
+[node name="Tween" type="Tween" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="TimerGrow" to="." method="_on_TimerGrow_timeout"]
 [connection signal="pressed" from="SwipeControl/TouchButtonTop" to="." method="_on_TouchButtonTop_pressed"]
 [connection signal="pressed" from="SwipeControl/TouchButtonBottom" to="." method="_on_TouchButtonBottom_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
