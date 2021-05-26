@@ -29,3 +29,15 @@ margin_left = 146.0
 margin_right = 195.0
 margin_bottom = 14.0
 text = "Flowers"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 288.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 140.0
+margin_right = 148.0
+margin_bottom = 14.0
+text = "0"
