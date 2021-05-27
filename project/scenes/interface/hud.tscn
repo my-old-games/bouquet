@@ -1,47 +1,96 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/hud.gd" type="Script" id=1]
 [ext_resource path="res://scenes/baskets/basket.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/PenguinAttack.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/YourHighschoolCrush-Regular.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 10.0
+[node name="VBCThemeTimer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.0
+margin_right = 144.0
+margin_bottom = 502.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBCThemeTimer" type="HBoxContainer" parent="VBCThemeTimer"]
 margin_right = 288.0
-margin_bottom = 14.0
+margin_bottom = 50.0
+custom_constants/separation = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_left = 93.0
-margin_right = 142.0
-margin_bottom = 14.0
-text = "Flowers"
+[node name="MCLTheme" type="MarginContainer" parent="VBCThemeTimer/HBCThemeTimer"]
+margin_left = 7.0
+margin_right = 227.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 220, 0 )
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_left = 146.0
-margin_right = 195.0
-margin_bottom = 14.0
-text = "Flowers"
+[node name="LabelTheme" type="Label" parent="VBCThemeTimer/HBCThemeTimer/MCLTheme"]
+margin_top = 17.0
+margin_right = 220.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 1 )
+text = "Beethoven Sonata para piano n.º 8"
+align = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 18.0
-margin_right = 288.0
+[node name="MCLTimer" type="MarginContainer" parent="VBCThemeTimer/HBCThemeTimer"]
+margin_left = 231.0
+margin_right = 281.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="LabelTimer" type="Label" parent="VBCThemeTimer/HBCThemeTimer/MCLTimer"]
+margin_top = 6.0
+margin_right = 50.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 30, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "60"
+align = 1
+
+[node name="HBCFlowers" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -144.0
+margin_top = -32.0
+margin_right = 144.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MCLFlower1" type="MarginContainer" parent="HBCFlowers"]
+margin_left = 134.0
+margin_right = 153.0
 margin_bottom = 32.0
-alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 140.0
-margin_right = 148.0
-margin_bottom = 14.0
-text = "0"
+[node name="LabelFlowe1" type="Label" parent="HBCFlowers/MCLFlower1"]
+margin_right = 19.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "x1"
 
 [node name="Basket" parent="." instance=ExtResource( 2 )]
 position = Vector2( 148, 476.276 )

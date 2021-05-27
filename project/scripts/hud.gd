@@ -2,10 +2,10 @@ extends CanvasLayer
 
 
 func set_flowers_count(score):
-	$VBoxContainer/HBoxContainer/Label2.text = String(score)
+	$HBCFlowers/MCLFlower1/LabelFlowe1.text = "x"+String(score)
 
 func set_timer_count(seconds):
-	$VBoxContainer/HBoxContainer2/Label.text = String(seconds)
+	$VBCThemeTimer/HBCThemeTimer/MCLTimer/LabelTimer.text = String(seconds)
 
 func basket_position():
 	return $Basket.get_position()
