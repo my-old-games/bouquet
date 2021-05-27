@@ -50,7 +50,7 @@ margin_top = 17.0
 margin_right = 220.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 1 )
-text = "Beethoven Sonata para piano n.º 8"
+text = "Theme"
 align = 1
 
 [node name="MCLTimer" type="MarginContainer" parent="VBCThemeTimer/HBCThemeTimer"]

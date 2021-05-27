@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/flowers/flower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/level.gd" type="Script" id=3]
 [ext_resource path="res://scenes/holes/hole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/music/6-minuets-woo-10-no-2-in-g-major.ogg" type="AudioStream" id=5]
 
 [node name="Level0" type="Node2D" groups=[
 "levels",
@@ -11,6 +12,7 @@
 script = ExtResource( 3 )
 flowers = [ ExtResource( 1 ) ]
 time = 60
+theme = "Minuet in G Major, WoO 10, No. 2"
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
@@ -62,5 +64,9 @@ position = Vector2( 148, 352 )
 
 [node name="Clock" type="Timer" parent="."]
 autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="timeout" from="Clock" to="." method="_on_Clock_timeout"]

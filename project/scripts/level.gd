@@ -2,6 +2,7 @@ extends Node2D
 # ---------------------- EXPORTS ----------------------
 export(Array, PackedScene) var flowers
 export(int) var time
+export(String) var theme
 # ---------------------- ONREADY VAR ----------------------
 var test_score = 0
 onready var basket_position = $HUD.basket_position()
@@ -11,6 +12,7 @@ onready var holes = $Holes.get_children()
 func _ready():
 	$HUD.set_flowers_count(test_score)
 	$HUD.set_timer_count(time)
+	$HUD.set_theme(theme)
 	generate_flowers()
 
 func _picked_handler():
