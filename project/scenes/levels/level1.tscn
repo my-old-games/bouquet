@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/flowers/flower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/level.gd" type="Script" id=3]
+[ext_resource path="res://scenes/holes/hole.tscn" type="PackedScene" id=4]
 
 [node name="Level0" type="Node2D" groups=[
 "levels",
@@ -21,59 +22,41 @@ position = Vector2( 346.949, 475.51 )
 
 [node name="Holes" type="Node" parent="."]
 
-[node name="Hole1" type="Position2D" parent="Holes"]
+[node name="Hole" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 64, 128 )
 
-[node name="Hole2" type="Position2D" parent="Holes"]
-position = Vector2( 96, 128 )
-
-[node name="Hole3" type="Position2D" parent="Holes"]
+[node name="Hole2" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 128, 128 )
 
-[node name="Hole4" type="Position2D" parent="Holes"]
-position = Vector2( 160, 128 )
+[node name="Hole3" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 192, 128 )
 
-[node name="Hole5" type="Position2D" parent="Holes"]
-position = Vector2( 190.076, 128 )
+[node name="Hole4" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 32, 192 )
 
-[node name="Hole19" type="Position2D" parent="Holes"]
-position = Vector2( 224, 128 )
+[node name="Hole5" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 96, 192 )
 
-[node name="Hole6" type="Position2D" parent="Holes"]
-position = Vector2( 64, 224 )
+[node name="Hole6" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 160, 192 )
 
-[node name="Hole7" type="Position2D" parent="Holes"]
-position = Vector2( 96, 224 )
+[node name="Hole7" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 224, 192 )
 
-[node name="Hole8" type="Position2D" parent="Holes"]
-position = Vector2( 128, 224 )
+[node name="Hole8" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 96, 256 )
 
-[node name="Hole9" type="Position2D" parent="Holes"]
-position = Vector2( 160, 224 )
+[node name="Hole9" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 192, 256 )
 
-[node name="Hole10" type="Position2D" parent="Holes"]
-position = Vector2( 192, 224 )
+[node name="Hole10" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 224, 320 )
 
-[node name="Hole18" type="Position2D" parent="Holes"]
-position = Vector2( 224, 224 )
-
-[node name="Hole11" type="Position2D" parent="Holes"]
+[node name="Hole11" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 64, 320 )
 
-[node name="Hole12" type="Position2D" parent="Holes"]
-position = Vector2( 96, 320 )
-
-[node name="Hole14" type="Position2D" parent="Holes"]
-position = Vector2( 128, 320 )
-
-[node name="Hole15" type="Position2D" parent="Holes"]
-position = Vector2( 160, 320 )
-
-[node name="Hole16" type="Position2D" parent="Holes"]
-position = Vector2( 190.076, 320 )
-
-[node name="Hole17" type="Position2D" parent="Holes"]
-position = Vector2( 224, 320 )
+[node name="Hole12" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 148, 352 )
 
 [node name="Flowers" type="Node" parent="."]
 

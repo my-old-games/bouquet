@@ -11,13 +11,13 @@ enum STATES {GROW, WILT, OK}
 onready var flower_state = STATES.GROW
 onready var root_level   = get_parent().get_parent()
 
-
-
+# ---------------------- VAR ----------------------
+var reset_position
+# ---------------------- SIGNALS ------------------
 signal picked
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(flower_state)
 	if root_level != null and root_level.is_in_group("levels"):
 		self.connect("picked", root_level, "_picked_handler")
 		rng.randomize()
@@ -44,6 +44,7 @@ func _on_TouchButtonBottom_pressed():
 
 func live():
 	var random = rng.randf_range(0.5, 5.0)
+	position = reset_position
 	$Sprite.frame = 0
 	$TimerGrow.set_wait_time(random)
 	$TimerGrow.start()
@@ -66,7 +67,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		"PICK_BEFORE":
 			tween_start(root_level.trash_position)
 		"WILT":
-			live()
+			reset_flower()
 
 func tween_start(target_position):
 	$Tween.interpolate_property(self, "position",
@@ -74,8 +75,18 @@ func tween_start(target_position):
 								Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 
+func reset_flower():
+	hide()
+	var random = rng.randf_range(0.5, 2.0)
+	$TimerReset.set_wait_time(random)
+	$TimerReset.start()
+
 func _on_Tween_tween_completed(object, key):
-	object.hide()
+	reset_flower()
 	root_level.update_basket()
 
-
+func _on_TimerReset_timeout():
+	show()
+	live()
+	
+	

@@ -20,7 +20,7 @@ func _picked_handler():
 func generate_flowers():
 	for hole in holes:
 		var flower = get_flower().instance()
-		flower.position = hole.position
+		flower.reset_position = hole.position
 		$Flowers.add_child(flower)
 
 func get_flower():
