@@ -1,18 +1,17 @@
 extends Node2D
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var rng = RandomNumberGenerator.new()
-var selected
-
+# ---------------------- EXPORTS ----------------------
+export(String) var tag
+export(float) var cooldown_min = 0.5
+export(float) var cooldown_max = 7.0
+# ---------------------- ENUMS ----------------------
 enum STATES {GROW, WILT, OK}
+# ---------------------- ONREADY VAR ----------------------
 onready var flower_state = STATES.GROW
 onready var root_level   = get_parent().get_parent()
-
 # ---------------------- VAR ----------------------
 var reset_position
+var rng = RandomNumberGenerator.new()
+var selected
 # ---------------------- SIGNALS ------------------
 signal picked
 
@@ -43,7 +42,7 @@ func _on_TouchButtonBottom_pressed():
 	selected = true
 
 func live():
-	var random = rng.randf_range(0.5, 5.0)
+	var random = rng.randf_range(cooldown_min, cooldown_max)
 	position = reset_position
 	$Sprite.frame = 0
 	$TimerGrow.set_wait_time(random)
