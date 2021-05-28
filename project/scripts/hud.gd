@@ -1,6 +1,5 @@
 extends CanvasLayer
-
-
+# ---------------------- FUNCTIONS ----------------------
 func set_flowers_count(score):
 	$HBCFlowers/MCLFlower1/LabelFlowe1.text = "x"+String(score)
 

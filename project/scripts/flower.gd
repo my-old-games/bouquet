@@ -3,6 +3,9 @@ extends Node2D
 export(String) var tag
 export(float) var cooldown_min = 0.5
 export(float) var cooldown_max = 7.0
+export(float) var reset_min = 1.0
+export(float) var reset_max = 3.0
+export(float) var tween_lapse = 0.5
 # ---------------------- ENUMS ----------------------
 enum STATES {GROW, WILT, OK}
 # ---------------------- ONREADY VAR ----------------------
@@ -14,17 +17,13 @@ var rng = RandomNumberGenerator.new()
 var selected
 # ---------------------- SIGNALS ------------------
 signal picked
-
-# Called when the node enters the scene tree for the first time.
+# ---------------------- FUNCTIONS ----------------------
 func _ready():
 	if root_level != null and root_level.is_in_group("levels"):
 		self.connect("picked", root_level, "_picked_handler")
 		rng.randomize()
 		live()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func _on_TimerGrow_timeout():
 	$AnimationPlayer.play("GROW")
 
@@ -70,13 +69,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func tween_start(target_position):
 	$Tween.interpolate_property(self, "position",
-								self.position, target_position, 1,
+								self.position, target_position, tween_lapse,
 								Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 
 func reset_flower():
 	hide()
-	var random = rng.randf_range(0.5, 2.0)
+	var random = rng.randf_range(reset_min, reset_max)
 	$TimerReset.set_wait_time(random)
 	$TimerReset.start()
 

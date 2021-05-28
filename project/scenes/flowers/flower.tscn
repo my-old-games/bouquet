@@ -115,16 +115,16 @@ tracks/0/keys = {
 [node name="Flower" type="Node2D"]
 script = ExtResource( 1 )
 tag = "F0"
+tween_lapse = 0.7
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -32 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 7
-frame = 11
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 0.5
+playback_speed = 0.6
 anims/GROW = SubResource( 1 )
 anims/IDLE = SubResource( 2 )
 anims/PICK = SubResource( 3 )

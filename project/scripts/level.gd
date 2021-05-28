@@ -9,6 +9,8 @@ onready var basket_position = $HUD.basket_position()
 onready var trash_position  = $TestTrash.position
 onready var holes = $Holes.get_children()
 # ---------------------- VAR ----------------------
+var rng = RandomNumberGenerator.new()
+# ---------------------- FUNCTIONS ----------------------
 func _ready():
 	$HUD.set_flowers_count(score)
 	$HUD.set_timer_count(time)
@@ -26,7 +28,9 @@ func generate_flowers():
 		$Flowers.add_child(flower)
 
 func get_flower():
-	return flowers[0]
+	rng.randomize()
+	var random_index = rng.randi_range(0, (flowers.size() - 1))
+	return flowers[random_index]
 
 func update_basket():
 	if  score > 0  and  score < 3 :
