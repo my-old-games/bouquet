@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/flowers/flower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/hud.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/images/backgrounds/background1.png" type="Texture" id=6]
 [ext_resource path="res://scenes/flowers/flowerf1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/flowers/flowerf2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/bouquets/bouquet.tscn" type="PackedScene" id=9]
 
 [node name="Level0" type="Node2D" groups=[
 "levels",
@@ -74,6 +75,16 @@ position = Vector2( 32, 416 )
 position = Vector2( 256, 416 )
 
 [node name="Flowers" type="Node" parent="."]
+
+[node name="Bouquets" type="Node2D" parent="."]
+
+[node name="Bouquet" parent="Bouquets" instance=ExtResource( 9 )]
+bouquet = {
+"flowers": [ "F0", "F1", "F2" ],
+"goal": 1,
+"pattern": [ "F0", "F1", "F2" ],
+"quantity": [ 6, 4, 8 ]
+}
 
 [node name="Clock" type="Timer" parent="."]
 autostart = true

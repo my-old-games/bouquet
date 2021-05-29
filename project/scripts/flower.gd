@@ -58,7 +58,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			flower_state = STATES.WILT
 			$AnimationPlayer.play("WILT")
 		"PICK":
-			emit_signal("picked")
+			emit_signal("picked",tag)
 			tween_start(root_level.basket_position)
 		"PICK_AFTER":
 			tween_start(root_level.trash_position)

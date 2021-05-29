@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/hud.gd" type="Script" id=1]
 [ext_resource path="res://scenes/baskets/basket.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/PenguinAttack.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/YourHighschoolCrush-Regular.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/images/icons/IconFlowerF0.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/icons/IconFlowerF1.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/icons/IconFlowerF2.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -20,7 +23,8 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 25
+size = 20
+outline_color = Color( 0.952941, 0.839216, 0.972549, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
@@ -80,23 +84,95 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -144.0
-margin_top = -32.0
+margin_top = -44.0
 margin_right = 144.0
-alignment = 1
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MCLFlower1" type="MarginContainer" parent="HBCFlowers"]
-margin_left = 134.0
-margin_right = 153.0
-margin_bottom = 32.0
+[node name="VBCIconF0" type="VBoxContainer" parent="HBCFlowers"]
+margin_right = 32.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 32, 32 )
+custom_constants/separation = -2
+alignment = 1
 
-[node name="LabelFlowe1" type="Label" parent="HBCFlowers/MCLFlower1"]
-margin_right = 19.0
-margin_bottom = 32.0
+[node name="TextureRectF0" type="TextureRect" parent="HBCFlowers/VBCIconF0"]
+margin_right = 32.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 32, 20 )
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="MCLFlowerF0" type="MarginContainer" parent="HBCFlowers/VBCIconF0"]
+margin_top = 18.0
+margin_right = 32.0
+margin_bottom = 44.0
+
+[node name="LabelFloweF0" type="Label" parent="HBCFlowers/VBCIconF0/MCLFlowerF0"]
+margin_right = 32.0
+margin_bottom = 26.0
 custom_fonts/font = SubResource( 3 )
-text = "x1"
+custom_colors/font_color = Color( 0.113725, 0.109804, 0.109804, 1 )
+text = "x0"
+align = 1
+
+[node name="VBCIconF1" type="VBoxContainer" parent="HBCFlowers"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 32, 32 )
+custom_constants/separation = -2
+alignment = 1
+
+[node name="TextureRectF1" type="TextureRect" parent="HBCFlowers/VBCIconF1"]
+margin_right = 32.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 32, 20 )
+texture = ExtResource( 6 )
+stretch_mode = 6
+
+[node name="MCLFlowerF1" type="MarginContainer" parent="HBCFlowers/VBCIconF1"]
+margin_top = 18.0
+margin_right = 32.0
+margin_bottom = 44.0
+
+[node name="LabelFloweF1" type="Label" parent="HBCFlowers/VBCIconF1/MCLFlowerF1"]
+margin_right = 32.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.113725, 0.109804, 0.109804, 1 )
+text = "x0"
+align = 1
+
+[node name="VBCIconF2" type="VBoxContainer" parent="HBCFlowers"]
+margin_left = 64.0
+margin_right = 96.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 32, 32 )
+custom_constants/separation = -2
+alignment = 1
+
+[node name="TextureRectF2" type="TextureRect" parent="HBCFlowers/VBCIconF2"]
+margin_right = 32.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 32, 20 )
+texture = ExtResource( 7 )
+stretch_mode = 6
+
+[node name="MCLFlowerF2" type="MarginContainer" parent="HBCFlowers/VBCIconF2"]
+margin_top = 18.0
+margin_right = 32.0
+margin_bottom = 44.0
+
+[node name="LabelFloweF2" type="Label" parent="HBCFlowers/VBCIconF2/MCLFlowerF2"]
+margin_right = 32.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.113725, 0.109804, 0.109804, 1 )
+text = "x0"
+align = 1
 
 [node name="Basket" parent="." instance=ExtResource( 2 )]
-position = Vector2( 148, 476.276 )
+position = Vector2( 144.428, 503.036 )
