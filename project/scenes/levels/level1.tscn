@@ -74,8 +74,6 @@ position = Vector2( 32, 416 )
 [node name="Hole14" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 256, 416 )
 
-[node name="Flowers" type="Node" parent="."]
-
 [node name="Bouquets" type="Node2D" parent="."]
 
 [node name="Bouquet" parent="Bouquets" instance=ExtResource( 9 )]
@@ -85,6 +83,9 @@ bouquet = {
 "pattern": [ "F0", "F1", "F2" ],
 "quantity": [ 6, 4, 8 ]
 }
+
+[node name="Flowers" type="Node2D" parent="."]
+z_index = 3
 
 [node name="Clock" type="Timer" parent="."]
 autostart = true

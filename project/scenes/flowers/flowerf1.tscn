@@ -8,5 +8,4 @@ tag = "F1"
 cooldown_max = 8.0
 
 [node name="Sprite" parent="." index="0"]
-modulate = Color( 0.464172, 0.819164, 0.914063, 1 )
 texture = ExtResource( 2 )
