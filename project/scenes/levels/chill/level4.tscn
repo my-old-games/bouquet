@@ -18,7 +18,7 @@ script = ExtResource( 1 )
 flowers = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 next_level = ExtResource( 10 )
 time = 20
-theme = "Minuet in G Major, WoO 10, No. 2"
+theme = "Piano Sonata no. 8  - Pathetique"
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -35,37 +35,37 @@ position = Vector2( 346.949, 475.51 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="Hole" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.063, 180.548 )
+position = Vector2( 238.063, 160 )
 
 [node name="Hole2" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 64, 192 )
+position = Vector2( 46.0625, 160 )
 
 [node name="Hole3" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 224, 192 )
 
 [node name="Hole4" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 96, 224 )
+position = Vector2( 110.823, 224 )
 
 [node name="Hole5" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 192, 224 )
+position = Vector2( 174.823, 224 )
 
 [node name="Hole6" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 142.063, 256 )
 
 [node name="Hole7" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 245.063, 288 )
+position = Vector2( 78.0625, 192 )
 
 [node name="Hole8" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 46.0625, 288 )
+position = Vector2( 78.0625, 288 )
 
 [node name="Hole9" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.949, 320 )
+position = Vector2( 206.063, 288 )
 
 [node name="Hole10" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 227, 352 )
+position = Vector2( 245.063, 352 )
 
 [node name="Hole11" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 64, 352 )
+position = Vector2( 44, 352 )
 
 [node name="Hole12" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 142.949, 384 )

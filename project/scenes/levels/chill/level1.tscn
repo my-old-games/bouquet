@@ -18,7 +18,7 @@ script = ExtResource( 1 )
 flowers = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 next_level = ExtResource( 10 )
 time = 20
-theme = "Minuet in G Major, WoO 10, No. 2"
+theme = "Etude Op. 25 no. 9  - Butterfly"
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -35,46 +35,40 @@ position = Vector2( 346.949, 475.51 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="Hole" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.063, 180.548 )
+position = Vector2( 67.125, 160 )
 
 [node name="Hole2" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 64, 192 )
+position = Vector2( 110.823, 186.274 )
 
 [node name="Hole3" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 224, 192 )
+position = Vector2( 174, 203 )
 
 [node name="Hole4" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 96, 224 )
+position = Vector2( 238.063, 233.274 )
 
 [node name="Hole5" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 192, 224 )
+position = Vector2( 192, 256 )
 
 [node name="Hole6" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.063, 256 )
+position = Vector2( 128, 288 )
 
 [node name="Hole7" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 245.063, 288 )
+position = Vector2( 64, 323 )
 
 [node name="Hole8" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 46.0625, 288 )
+position = Vector2( 125.012, 352 )
 
 [node name="Hole9" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.949, 320 )
+position = Vector2( 174.823, 384 )
 
 [node name="Hole10" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 227, 352 )
-
-[node name="Hole11" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 64, 352 )
-
-[node name="Hole12" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.949, 384 )
+position = Vector2( 220.125, 415.274 )
 
 [node name="Hole13" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 32, 416 )
+position = Vector2( 44, 448 )
 
 [node name="Hole14" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 256, 416 )
+position = Vector2( 94, 406 )
 
 [node name="Bouquets" type="Node2D" parent="."]
 

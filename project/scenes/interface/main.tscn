@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/fonts/PenguinAttack.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/images/buttons/ButtonChill.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/backgrounds/Background0.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/bouquets/MainBouquet.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/interface/Logo.png" type="Texture" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 10 )
@@ -69,7 +70,7 @@ use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 25
+size = 18
 outline_size = 1
 outline_color = Color( 0.0588235, 0.00784314, 0.00784314, 1 )
 use_filter = true
@@ -245,6 +246,58 @@ tracks/2/keys = {
 "values": [ Vector2( 1152, 0 ) ]
 }
 
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 11 )
+region = Rect2( 70, 0, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 11 )
+region = Rect2( 140, 0, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 11 )
+region = Rect2( 210, 0, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 50, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 11 )
+region = Rect2( 70, 50, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 11 )
+region = Rect2( 140, 50, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 11 )
+region = Rect2( 210, 50, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 100, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 11 )
+region = Rect2( 70, 100, 70, 50 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 11 )
+region = Rect2( 140, 100, 70, 50 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "IDLE",
+"speed": 5.0
+} ]
+
 [node name="Main" type="Control"]
 script = ExtResource( 2 )
 __meta__ = {
@@ -286,7 +339,7 @@ rect_min_size = Vector2( 288, 80 )
 position = Vector2( 146.085, -20.2272 )
 frames = SubResource( 8 )
 animation = "IDLE"
-frame = 2
+frame = 6
 playing = true
 
 [node name="MGTitle" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
@@ -611,9 +664,9 @@ rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
 [node name="MGTitle4" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
-margin_top = 156.0
+margin_top = 165.0
 margin_right = 288.0
-margin_bottom = 212.0
+margin_bottom = 221.0
 
 [node name="LabelTitle" type="Label" parent="HBoxContainer/VBCChillmode/MGTitle4"]
 margin_left = 87.0
@@ -623,116 +676,120 @@ custom_fonts/font = SubResource( 9 )
 text = "Levels"
 
 [node name="CCChill" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
-margin_top = 216.0
+margin_top = 225.0
 margin_right = 288.0
-margin_bottom = 356.0
+margin_bottom = 347.0
 
 [node name="VBCChill" type="VBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill"]
-margin_left = 83.0
-margin_right = 204.0
-margin_bottom = 140.0
+margin_left = 9.0
+margin_right = 278.0
+margin_bottom = 122.0
+custom_constants/separation = 10
 
 [node name="HBChill" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
-margin_right = 121.0
-margin_bottom = 32.0
+margin_right = 269.0
+margin_bottom = 23.0
+alignment = 1
 
 [node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_left = 8.0
+margin_right = 233.0
+margin_bottom = 23.0
 
 [node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCLabel"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_right = 225.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 12 )
-text = "Bouquet2"
+text = "Etude Op. 25 no. 9  - Butterfly"
 
 [node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill"]
-margin_left = 97.0
-margin_right = 121.0
-margin_bottom = 32.0
+margin_left = 237.0
+margin_right = 261.0
+margin_bottom = 23.0
 
 [node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCPlay"]
-margin_top = 4.0
 margin_right = 24.0
-margin_bottom = 27.0
+margin_bottom = 23.0
 texture_normal = ExtResource( 8 )
 
 [node name="HBChill2" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
-margin_top = 36.0
-margin_right = 121.0
-margin_bottom = 68.0
+margin_top = 33.0
+margin_right = 269.0
+margin_bottom = 56.0
+alignment = 1
 
 [node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_left = 55.0
+margin_right = 185.0
+margin_bottom = 23.0
 
 [node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2/CCCLabel"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_right = 130.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 12 )
-text = "Bouquet2"
+text = "Gymnopédies no. 1"
 
 [node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2"]
-margin_left = 97.0
-margin_right = 121.0
-margin_bottom = 32.0
+margin_left = 189.0
+margin_right = 213.0
+margin_bottom = 23.0
 
 [node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2/CCCPlay"]
-margin_top = 4.0
 margin_right = 24.0
-margin_bottom = 27.0
+margin_bottom = 23.0
 texture_normal = ExtResource( 8 )
 
 [node name="HBChill3" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
-margin_top = 72.0
-margin_right = 121.0
-margin_bottom = 104.0
+margin_top = 66.0
+margin_right = 269.0
+margin_bottom = 89.0
+alignment = 1
 
 [node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_left = 46.0
+margin_right = 195.0
+margin_bottom = 23.0
 
 [node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3/CCCLabel"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_right = 149.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 12 )
-text = "Bouquet2"
+text = "Nocturne Op. 9 no. 2"
 
 [node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3"]
-margin_left = 97.0
-margin_right = 121.0
-margin_bottom = 32.0
+margin_left = 199.0
+margin_right = 223.0
+margin_bottom = 23.0
 
 [node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3/CCCPlay"]
-margin_top = 4.0
 margin_right = 24.0
-margin_bottom = 27.0
+margin_bottom = 23.0
 texture_normal = ExtResource( 8 )
 
 [node name="HBChill4" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
-margin_top = 108.0
-margin_right = 121.0
-margin_bottom = 140.0
+margin_top = 99.0
+margin_right = 269.0
+margin_bottom = 122.0
+alignment = 1
 
 [node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_right = 241.0
+margin_bottom = 23.0
 
 [node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4/CCCLabel"]
-margin_right = 93.0
-margin_bottom = 32.0
+margin_right = 241.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 12 )
-text = "Bouquet2"
+text = "Piano Sonata no. 8  - Pathetique"
 
 [node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4"]
-margin_left = 97.0
-margin_right = 121.0
-margin_bottom = 32.0
+margin_left = 245.0
+margin_right = 269.0
+margin_bottom = 23.0
 
 [node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4/CCCPlay"]
-margin_top = 4.0
 margin_right = 24.0
-margin_bottom = 27.0
+margin_bottom = 23.0
 texture_normal = ExtResource( 8 )
 
 [node name="VBCTutorial" type="VBoxContainer" parent="HBoxContainer"]
@@ -809,6 +866,13 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+
+[node name="Logo" type="AnimatedSprite" parent="."]
+position = Vector2( 136.316, 462.129 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 29 )
+animation = "IDLE"
+playing = true
 
 [connection signal="pressed" from="HBoxContainer/VBCMenu/MGPlay/TBPlay" to="." method="_on_TBPlay_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBCMenu/MGTutorial/TBTutorial" to="." method="_on_TBTutorial_pressed"]

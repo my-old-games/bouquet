@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/backgrounds/background1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/backgrounds/background2.png" type="Texture" id=2]
 [ext_resource path="res://assets/music/chill/Nocturne in E flat major, Op. 9 no. 2.ogg" type="AudioStream" id=3]
 [ext_resource path="res://scenes/holes/hole.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/bouquets/bouquet.tscn" type="PackedScene" id=5]
@@ -18,7 +18,7 @@ script = ExtResource( 1 )
 flowers = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 next_level = ExtResource( 10 )
 time = 20
-theme = "Minuet in G Major, WoO 10, No. 2"
+theme = "Nocturne Op. 9 no. 2"
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -35,28 +35,28 @@ position = Vector2( 346.949, 475.51 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="Hole" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.063, 180.548 )
+position = Vector2( 142.949, 160 )
 
 [node name="Hole2" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 64, 192 )
+position = Vector2( 53.0625, 160 )
 
 [node name="Hole3" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 224, 192 )
+position = Vector2( 255.063, 224 )
 
 [node name="Hole4" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 96, 224 )
+position = Vector2( 35.125, 218.274 )
 
 [node name="Hole5" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 192, 224 )
+position = Vector2( 234, 160 )
 
 [node name="Hole6" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 142.063, 256 )
+position = Vector2( 142.949, 233.274 )
 
 [node name="Hole7" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 245.063, 288 )
+position = Vector2( 224, 288 )
 
 [node name="Hole8" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 46.0625, 288 )
+position = Vector2( 67.125, 288 )
 
 [node name="Hole9" parent="Holes" instance=ExtResource( 4 )]
 position = Vector2( 142.949, 320 )
