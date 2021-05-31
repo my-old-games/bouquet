@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 -
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

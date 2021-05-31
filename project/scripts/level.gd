@@ -1,6 +1,7 @@
 extends Node2D
 # ---------------------- EXPORTS ----------------------
 export(Array, PackedScene) var flowers
+export(PackedScene) var next_level
 export(int)    var time
 export(bool)   var time_mode
 export(String) var theme
@@ -94,3 +95,8 @@ func _on_Clock_timeout():
 				$HUD.showModal(false)
 		else:
 			$HUD.showModal(true)
+
+
+func _on_Music_finished():
+	if !time_mode: 
+		$HUD.showModal(true)

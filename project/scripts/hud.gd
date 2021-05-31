@@ -12,10 +12,13 @@ func showModal(win):
 func set_flowers_count(score, tag):
 	match tag:
 		"F0":
+			$HBCFlowers/VBCIconF0.show()
 			$HBCFlowers/VBCIconF0/MCLFlowerF0/LabelFloweF0.text = String(score)
 		"F1":
+			$HBCFlowers/VBCIconF1.show()
 			$HBCFlowers/VBCIconF1/MCLFlowerF1/LabelFloweF1.text = String(score)
 		"F2":
+			$HBCFlowers/VBCIconF2.show()
 			$HBCFlowers/VBCIconF2/MCLFlowerF2/LabelFloweF2.text = String(score)
 
 func set_timer_count(seconds):
@@ -40,7 +43,7 @@ func _on_ButtonHome_pressed():
 	get_tree().change_scene("res://scenes/interface/main.tscn")
 
 func _on_ButtonNext_pressed():
-	get_tree().change_scene("res://scenes/interface/main.tscn")
+	get_tree().change_scene_to(owner.next_level)
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()

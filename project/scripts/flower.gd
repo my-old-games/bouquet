@@ -21,7 +21,7 @@ signal picked
 func _ready():
 	if root_level != null and root_level.is_in_group("levels"):
 		self.connect("picked", root_level, "_picked_handler")
-		rng.randomize()
+		#rng.randomize()
 		live()
 
 func _on_TimerGrow_timeout():
@@ -41,6 +41,7 @@ func _on_TouchButtonBottom_pressed():
 	selected = true
 
 func live():
+	rng.randomize()
 	var random = rng.randf_range(cooldown_min, cooldown_max)
 	position = reset_position
 	$Sprite.frame = 0
@@ -75,6 +76,7 @@ func tween_start(target_position):
 
 func reset_flower():
 	hide()
+	rng.randomize()
 	var random = rng.randf_range(reset_min, reset_max)
 	$TimerReset.set_wait_time(random)
 	$TimerReset.start()

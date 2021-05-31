@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Nocturne in E flat major, Op. 9 no. 2.ogg-a65274cc99
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Etude Op. 25 no. 9 in G flat major - 'Butterfly'.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

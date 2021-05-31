@@ -170,6 +170,7 @@ __meta__ = {
 }
 
 [node name="VBCIconF0" type="VBoxContainer" parent="HBCFlowers"]
+visible = false
 margin_right = 32.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 32, 32 )
@@ -197,8 +198,8 @@ text = "0"
 align = 1
 
 [node name="VBCIconF1" type="VBoxContainer" parent="HBCFlowers"]
-margin_left = 32.0
-margin_right = 64.0
+visible = false
+margin_right = 32.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 32, 32 )
 custom_constants/separation = -2
@@ -225,8 +226,8 @@ text = "0"
 align = 1
 
 [node name="VBCIconF2" type="VBoxContainer" parent="HBCFlowers"]
-margin_left = 64.0
-margin_right = 96.0
+visible = false
+margin_right = 32.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 32, 32 )
 custom_constants/separation = -2
