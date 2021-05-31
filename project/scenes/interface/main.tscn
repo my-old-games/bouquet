@@ -1,0 +1,243 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/PenguinAttack.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "GO_UICHILLMODE"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 864, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "GO_UIMENU"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "GO_UIPLAYMODE"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 288, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "GO_UITIMEMODE"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 576, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "GO_UITUTORIAL"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1152, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="Main" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1152.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBCMenu" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 288.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 288, 512 )
+alignment = 1
+
+[node name="MGTitle" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
+margin_top = 230.0
+margin_right = 288.0
+margin_bottom = 281.0
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCMenu/MGTitle"]
+margin_left = 71.0
+margin_right = 216.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "Bouquet0"
+
+[node name="VBCPlaymode" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 288.0
+margin_right = 576.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 288, 512 )
+alignment = 1
+
+[node name="MGTitle2" type="CenterContainer" parent="HBoxContainer/VBCPlaymode"]
+margin_top = 230.0
+margin_right = 288.0
+margin_bottom = 281.0
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCPlaymode/MGTitle2"]
+margin_left = 74.0
+margin_right = 214.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "Bouquet1"
+
+[node name="VBCTimemode" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 576.0
+margin_right = 864.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 288, 512 )
+alignment = 1
+
+[node name="MGTitle3" type="CenterContainer" parent="HBoxContainer/VBCTimemode"]
+margin_top = 230.0
+margin_right = 288.0
+margin_bottom = 281.0
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCTimemode/MGTitle3"]
+margin_left = 69.0
+margin_right = 218.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "Bouquet2"
+
+[node name="VBCChillmode" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 864.0
+margin_right = 1152.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 288, 512 )
+alignment = 1
+
+[node name="MGTitle4" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
+margin_top = 230.0
+margin_right = 288.0
+margin_bottom = 281.0
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCChillmode/MGTitle4"]
+margin_left = 70.0
+margin_right = 217.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "Bouquet3"
+
+[node name="VBCTutorial" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 1152.0
+margin_right = 1440.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 288, 512 )
+alignment = 1
+
+[node name="MGTitle5" type="CenterContainer" parent="HBoxContainer/VBCTutorial"]
+margin_top = 230.0
+margin_right = 288.0
+margin_bottom = 281.0
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCTutorial/MGTitle5"]
+margin_left = 70.0
+margin_right = 218.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "Bouquet4"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 864, 0 )
+anchor_mode = 0
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/GO_UICHILLMODE = SubResource( 4 )
+anims/GO_UIMENU = SubResource( 2 )
+anims/GO_UIPLAYMODE = SubResource( 3 )
+anims/GO_UITIMEMODE = SubResource( 5 )
+anims/GO_UITUTORIAL = SubResource( 6 )

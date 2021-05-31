@@ -23,3 +23,16 @@ func update_basket(anim):
 
 func hide_goals():
 	$HBCFlowers.hide()
+
+
+func _on_ButtonReset_pressed():
+	print('Reset')
+
+func _on_ButtonHome_pressed():
+	print('Home')
+
+func _on_ButtonNext_pressed():
+	print('Next')
+
+func _on_ButtonQuit_pressed():
+	get_tree().quit()
