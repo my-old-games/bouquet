@@ -1,8 +1,5 @@
 extends CanvasLayer
 # ---------------------- FUNCTIONS ----------------------
-func _ready():
-	$NPRModal.hide()
-
 func showModal(win):
 	if win:
 		$NPRModal/VBCModal/CCTitle/LabelTitle.text = "Victory"

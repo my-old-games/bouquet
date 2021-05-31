@@ -1,14 +1,81 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/fonts/PenguinAttack.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/main.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/buttons/ButtonMain_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/buttons/ButtonMain_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/buttons/ButtonsShortcut_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/music/Minuet in G major, Anh. 114 - Notebook for Anna Magdalena Bach.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/images/buttons/ButtonLevel.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/buttons/ButtonChill.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/backgrounds/Background0.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/bouquets/MainBouquet.png" type="Texture" id=10]
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 600, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 10 )
+region = Rect2( 200, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 10 )
+region = Rect2( 400, 200, 200, 200 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "IDLE",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 45
+outline_size = 1
+outline_color = Color( 0.517647, 0.0627451, 0.0627451, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "GO_UICHILLMODE"
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+outline_color = Color( 0.933333, 0.8, 0.345098, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+outline_size = 2
+outline_color = Color( 0.933333, 0.8, 0.345098, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+outline_size = 1
+outline_color = Color( 0.0588235, 0.00784314, 0.00784314, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Camera2D:position:x")
 tracks/0/interp = 1
@@ -29,9 +96,20 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 864, 0 ) ]
+}
 
-[sub_resource type="Animation" id=2]
-resource_name = "GO_UIMENU"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Camera2D:position:x")
 tracks/0/interp = 1
@@ -52,9 +130,20 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
-[sub_resource type="Animation" id=3]
-resource_name = "GO_UIPLAYMODE"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Camera2D:position:x")
 tracks/0/interp = 1
@@ -75,9 +164,20 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 0 ) ]
+}
 
-[sub_resource type="Animation" id=5]
-resource_name = "GO_UITIMEMODE"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Camera2D:position:x")
 tracks/0/interp = 1
@@ -98,9 +198,20 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 576, 0 ) ]
+}
 
-[sub_resource type="Animation" id=6]
-resource_name = "GO_UITUTORIAL"
+[sub_resource type="Animation" id=7]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Camera2D:position:x")
 tracks/0/interp = 1
@@ -121,8 +232,29 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1152, 0 ) ]
+}
 
 [node name="Main" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 288.0
+margin_bottom = 512.0
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,17 +274,108 @@ margin_bottom = 512.0
 rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
-[node name="MGTitle" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
-margin_top = 230.0
+[node name="CCBouquet" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
+margin_top = 132.0
 margin_right = 288.0
-margin_bottom = 281.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 288, 80 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HBoxContainer/VBCMenu/CCBouquet"]
+position = Vector2( 146.085, -20.2272 )
+frames = SubResource( 17 )
+animation = "IDLE"
+frame = 1
+playing = true
+
+[node name="MGTitle" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
+margin_top = 216.0
+margin_right = 288.0
+margin_bottom = 272.0
 
 [node name="LabelTitle" type="Label" parent="HBoxContainer/VBCMenu/MGTitle"]
 margin_left = 71.0
 margin_right = 216.0
-margin_bottom = 51.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
-text = "Bouquet0"
+text = "Bouquet"
+
+[node name="MGPlay" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
+margin_top = 276.0
+margin_right = 288.0
+margin_bottom = 308.0
+
+[node name="TBPlay" type="TextureButton" parent="HBoxContainer/VBCMenu/MGPlay"]
+margin_left = 80.0
+margin_right = 208.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCMenu/MGPlay/TBPlay"]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 136.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "PLAY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MGTutorial" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
+margin_top = 312.0
+margin_right = 288.0
+margin_bottom = 344.0
+
+[node name="TBTutorial" type="TextureButton" parent="HBoxContainer/VBCMenu/MGTutorial"]
+margin_left = 80.0
+margin_right = 208.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCMenu/MGTutorial/TBTutorial"]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 136.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "TUTORIAL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MGQuit" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
+margin_top = 348.0
+margin_right = 288.0
+margin_bottom = 380.0
+
+[node name="TBQuit" type="TextureButton" parent="HBoxContainer/VBCMenu/MGQuit"]
+margin_left = 80.0
+margin_right = 208.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCMenu/MGQuit/TBQuit"]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 136.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "QUIT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBCPlaymode" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 288.0
@@ -161,17 +384,69 @@ margin_bottom = 512.0
 rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
-[node name="MGTitle2" type="CenterContainer" parent="HBoxContainer/VBCPlaymode"]
-margin_top = 230.0
+[node name="MGTitle" type="CenterContainer" parent="HBoxContainer/VBCPlaymode"]
+margin_top = 192.0
 margin_right = 288.0
-margin_bottom = 281.0
+margin_bottom = 248.0
 
-[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCPlaymode/MGTitle2"]
-margin_left = 74.0
-margin_right = 214.0
-margin_bottom = 51.0
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCPlaymode/MGTitle"]
+margin_left = 19.0
+margin_right = 268.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
-text = "Bouquet1"
+text = "Games Modes"
+
+[node name="MGTime" type="CenterContainer" parent="HBoxContainer/VBCPlaymode"]
+margin_top = 252.0
+margin_right = 288.0
+margin_bottom = 284.0
+
+[node name="TBTime" type="TextureButton" parent="HBoxContainer/VBCPlaymode/MGTime"]
+margin_left = 80.0
+margin_right = 208.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCPlaymode/MGTime/TBTime"]
+margin_left = -9.35358
+margin_top = -9.0
+margin_right = 135.646
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "Time Mode"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MGChill" type="CenterContainer" parent="HBoxContainer/VBCPlaymode"]
+margin_top = 288.0
+margin_right = 288.0
+margin_bottom = 320.0
+
+[node name="TBChill" type="TextureButton" parent="HBoxContainer/VBCPlaymode/MGChill"]
+margin_left = 80.0
+margin_right = 208.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="LabelTitle" type="Label" parent="HBoxContainer/VBCPlaymode/MGChill/TBChill"]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 136.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "Chill Mode"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBCTimemode" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 576.0
@@ -181,16 +456,150 @@ rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
 [node name="MGTitle3" type="CenterContainer" parent="HBoxContainer/VBCTimemode"]
-margin_top = 230.0
+margin_top = 176.0
 margin_right = 288.0
-margin_bottom = 281.0
+margin_bottom = 232.0
 
 [node name="LabelTitle" type="Label" parent="HBoxContainer/VBCTimemode/MGTitle3"]
-margin_left = 69.0
-margin_right = 218.0
-margin_bottom = 51.0
+margin_left = 87.0
+margin_right = 200.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
-text = "Bouquet2"
+text = "Levels"
+
+[node name="CCLevel" type="CenterContainer" parent="HBoxContainer/VBCTimemode"]
+margin_top = 236.0
+margin_right = 288.0
+margin_bottom = 336.0
+
+[node name="GCLevel" type="GridContainer" parent="HBoxContainer/VBCTimemode/CCLevel"]
+margin_left = 62.0
+margin_right = 226.0
+margin_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 0
+columns = 3
+
+[node name="TBLevel" type="TextureButton" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel"]
+margin_right = 52.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TBLevel2" type="TextureButton" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel"]
+margin_left = 56.0
+margin_right = 108.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel2"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TBLevel3" type="TextureButton" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel"]
+margin_left = 112.0
+margin_right = 164.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel3"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TBLevel4" type="TextureButton" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel"]
+margin_top = 52.0
+margin_right = 52.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel4"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TBLevel5" type="TextureButton" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel"]
+margin_left = 56.0
+margin_top = 52.0
+margin_right = 108.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel5"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TBLevel6" type="TextureButton" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel"]
+margin_left = 112.0
+margin_top = 52.0
+margin_right = 164.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel6"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.235294, 0.207843, 0.168627, 1 )
+text = "6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBCChillmode" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 864.0
@@ -200,16 +609,51 @@ rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
 [node name="MGTitle4" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
-margin_top = 230.0
+margin_top = 210.0
 margin_right = 288.0
-margin_bottom = 281.0
+margin_bottom = 266.0
 
 [node name="LabelTitle" type="Label" parent="HBoxContainer/VBCChillmode/MGTitle4"]
-margin_left = 70.0
-margin_right = 217.0
-margin_bottom = 51.0
+margin_left = 87.0
+margin_right = 200.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
-text = "Bouquet3"
+text = "Levels"
+
+[node name="CCChill" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
+margin_top = 270.0
+margin_right = 288.0
+margin_bottom = 302.0
+
+[node name="VBCChill" type="VBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill"]
+margin_left = 83.0
+margin_right = 204.0
+margin_bottom = 32.0
+
+[node name="HBChill" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
+margin_right = 121.0
+margin_bottom = 32.0
+
+[node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill"]
+margin_right = 93.0
+margin_bottom = 32.0
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCLabel"]
+margin_right = 93.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 9 )
+text = "Bouquet2"
+
+[node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill"]
+margin_left = 97.0
+margin_right = 121.0
+margin_bottom = 32.0
+
+[node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCPlay"]
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 27.0
+texture_normal = ExtResource( 8 )
 
 [node name="VBCTutorial" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 1152.0
@@ -219,25 +663,86 @@ rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
 [node name="MGTitle5" type="CenterContainer" parent="HBoxContainer/VBCTutorial"]
-margin_top = 230.0
+margin_top = 228.0
 margin_right = 288.0
-margin_bottom = 281.0
+margin_bottom = 284.0
 
 [node name="LabelTitle" type="Label" parent="HBoxContainer/VBCTutorial/MGTitle5"]
-margin_left = 70.0
-margin_right = 218.0
-margin_bottom = 51.0
+margin_left = 67.0
+margin_right = 221.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
-text = "Bouquet4"
+text = "Tutorial"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 864, 0 )
+position = Vector2( 1152, 0 )
 anchor_mode = 0
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/GO_UICHILLMODE = SubResource( 4 )
-anims/GO_UIMENU = SubResource( 2 )
-anims/GO_UIPLAYMODE = SubResource( 3 )
-anims/GO_UITIMEMODE = SubResource( 5 )
-anims/GO_UITUTORIAL = SubResource( 6 )
+anims/GO_UICHILLMODE = SubResource( 3 )
+anims/GO_UIMENU = SubResource( 4 )
+anims/GO_UIPLAYMODE = SubResource( 5 )
+anims/GO_UITIMEMODE = SubResource( 6 )
+anims/GO_UITUTORIAL = SubResource( 7 )
+
+[node name="BtnMenu" type="TextureButton" parent="."]
+margin_left = 518.338
+margin_top = 459.657
+margin_right = 570.338
+margin_bottom = 509.657
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnMenu2" type="TextureButton" parent="."]
+margin_left = 1384.71
+margin_top = 459.352
+margin_right = 1436.71
+margin_bottom = 509.352
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnMenu3" type="TextureButton" parent="."]
+margin_left = 1091.9
+margin_top = 459.225
+margin_right = 1143.9
+margin_bottom = 509.225
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnMenu4" type="TextureButton" parent="."]
+margin_left = 807.5
+margin_top = 460.0
+margin_right = 859.5
+margin_bottom = 510.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[connection signal="pressed" from="HBoxContainer/VBCMenu/MGPlay/TBPlay" to="." method="_on_TBPlay_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCMenu/MGTutorial/TBTutorial" to="." method="_on_TBTutorial_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCMenu/MGQuit/TBQuit" to="." method="_on_TBQuit_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCPlaymode/MGTime/TBTime" to="." method="_on_TBTime_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCPlaymode/MGChill/TBChill" to="." method="_on_TBChill_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel" to="." method="_on_TBLevel_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel2" to="." method="_on_TBLevel_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel3" to="." method="_on_TBLevel_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel4" to="." method="_on_TBLevel_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel5" to="." method="_on_TBLevel_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel6" to="." method="_on_TBLevel_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCPlay/TBCPlay" to="." method="_on_TBCPlay_pressed"]
+[connection signal="pressed" from="BtnMenu" to="." method="_on_BtnMenu_pressed"]
+[connection signal="pressed" from="BtnMenu2" to="." method="_on_BtnMenu_pressed"]
+[connection signal="pressed" from="BtnMenu3" to="." method="_on_BtnMenu_pressed"]
+[connection signal="pressed" from="BtnMenu4" to="." method="_on_BtnMenu_pressed"]

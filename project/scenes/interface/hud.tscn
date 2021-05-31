@@ -89,7 +89,7 @@ position = Vector2( -4, 0 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 5 )
 animation = "IDLE"
-frame = 1
+frame = 2
 playing = true
 centered = false
 
@@ -256,6 +256,7 @@ align = 1
 position = Vector2( 142.823, 500.735 )
 
 [node name="NPRModal" type="NinePatchRect" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
