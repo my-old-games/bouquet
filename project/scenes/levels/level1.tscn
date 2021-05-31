@@ -16,6 +16,7 @@
 script = ExtResource( 3 )
 flowers = [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ]
 time = 60
+time_mode = true
 theme = "Minuet in G Major, WoO 10, No. 2"
 
 [node name="Background" type="Sprite" parent="."]
