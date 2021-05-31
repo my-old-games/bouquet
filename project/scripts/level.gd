@@ -1,7 +1,8 @@
 extends Node2D
 # ---------------------- EXPORTS ----------------------
 export(Array, PackedScene) var flowers
-export(int) var time
+export(int)    var time
+export(bool)   var time_mode
 export(String) var theme
 # ---------------------- ONREADY VAR ----------------------
 onready var score = 0
@@ -14,27 +15,21 @@ var picked = 0
 var goals = []
 # ---------------------- FUNCTIONS ----------------------
 func _ready():
-	set_flowers_goals()
+	generate_flowers()
 	$HUD.set_timer_count(time)
 	$HUD.set_theme(theme)
-	generate_flowers()
+	if time_mode:
+		set_flowers_goals()
+	else:
+		$HUD.hide_goals()
+
 
 func _picked_handler(tag):
 	picked += 1
-	match tag:
-		"F0":
-			if goals[0] > 0: 
-				goals[0] -= 1
-				$HUD.set_flowers_count(goals[0],tag)
-		"F1":
-			if goals[1] > 0: 
-				goals[1] -= 1
-				$HUD.set_flowers_count(goals[1],tag)
-		"F2":
-			if goals[2] > 0: 
-				goals[2] -= 1
-				$HUD.set_flowers_count(goals[2],tag)
-	print(is_win())
+	if time_mode: 
+		print(check_goals(tag))
+	else:
+		time += 3
 
 func generate_flowers():
 	for hole in holes:
@@ -58,13 +53,29 @@ func update_basket():
 		print("Fail!")
 
 func set_flowers_goals():
-	var bouquet  = $Bouquets/Bouquet
-	var flowers  = bouquet.get_flowers()
-	var quantity = bouquet.get_quantity()
-	for i in flowers.size():
+	var bouquet   = $Bouquets/Bouquet
+	var bflowers  = bouquet.get_flowers()
+	var quantity  = bouquet.get_quantity()
+	for i in bflowers.size():
 		var goal = quantity[i] * bouquet.get_goal()
-		$HUD.set_flowers_count(goal, flowers[i])
+		$HUD.set_flowers_count(goal, bflowers[i])
 		goals.append(goal)
+
+func check_goals(tag):
+	match tag:
+		"F0":
+			if goals[0] > 0: 
+				goals[0] -= 1
+				$HUD.set_flowers_count(goals[0],tag)
+		"F1":
+			if goals[1] > 0: 
+				goals[1] -= 1
+				$HUD.set_flowers_count(goals[1],tag)
+		"F2":
+			if goals[2] > 0: 
+				goals[2] -= 1
+				$HUD.set_flowers_count(goals[2],tag)
+	return is_win()
 
 func is_win():
 	for goal in goals:

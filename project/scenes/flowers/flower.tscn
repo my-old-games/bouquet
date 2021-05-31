@@ -142,10 +142,9 @@ position = Vector2( 0, -32 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 7
-frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 0.6
+playback_speed = 0.5
 anims/GROW = SubResource( 1 )
 anims/IDLE = SubResource( 2 )
 anims/PICK = SubResource( 3 )

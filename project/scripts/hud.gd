@@ -20,3 +20,6 @@ func basket_position():
 
 func update_basket(anim):
 	$Basket.set_animation(anim)
+
+func hide_goals():
+	$HBCFlowers.hide()
