@@ -250,6 +250,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+time_levels = [ "res://scenes/levels/time/level1.tscn", "res://scenes/levels/time/level2.tscn", "res://scenes/levels/time/level3.tscn", "res://scenes/levels/time/level4.tscn", "res://scenes/levels/time/level5.tscn", "res://scenes/levels/time/level6.tscn" ]
+chill_levels = [ "res://scenes/levels/chill/level1.tscn", "res://scenes/levels/chill/level2.tscn", "res://scenes/levels/chill/level3.tscn", "res://scenes/levels/chill/level4.tscn" ]
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 288.0
@@ -284,6 +286,7 @@ rect_min_size = Vector2( 288, 80 )
 position = Vector2( 146.085, -20.2272 )
 frames = SubResource( 8 )
 animation = "IDLE"
+frame = 2
 playing = true
 
 [node name="MGTitle" type="CenterContainer" parent="HBoxContainer/VBCMenu"]
@@ -608,9 +611,9 @@ rect_min_size = Vector2( 288, 512 )
 alignment = 1
 
 [node name="MGTitle4" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
-margin_top = 210.0
+margin_top = 156.0
 margin_right = 288.0
-margin_bottom = 266.0
+margin_bottom = 212.0
 
 [node name="LabelTitle" type="Label" parent="HBoxContainer/VBCChillmode/MGTitle4"]
 margin_left = 87.0
@@ -620,14 +623,14 @@ custom_fonts/font = SubResource( 9 )
 text = "Levels"
 
 [node name="CCChill" type="CenterContainer" parent="HBoxContainer/VBCChillmode"]
-margin_top = 270.0
+margin_top = 216.0
 margin_right = 288.0
-margin_bottom = 302.0
+margin_bottom = 356.0
 
 [node name="VBCChill" type="VBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill"]
 margin_left = 83.0
 margin_right = 204.0
-margin_bottom = 32.0
+margin_bottom = 140.0
 
 [node name="HBChill" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
 margin_right = 121.0
@@ -649,6 +652,84 @@ margin_right = 121.0
 margin_bottom = 32.0
 
 [node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCPlay"]
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 27.0
+texture_normal = ExtResource( 8 )
+
+[node name="HBChill2" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
+margin_top = 36.0
+margin_right = 121.0
+margin_bottom = 68.0
+
+[node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2"]
+margin_right = 93.0
+margin_bottom = 32.0
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2/CCCLabel"]
+margin_right = 93.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 12 )
+text = "Bouquet2"
+
+[node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2"]
+margin_left = 97.0
+margin_right = 121.0
+margin_bottom = 32.0
+
+[node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2/CCCPlay"]
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 27.0
+texture_normal = ExtResource( 8 )
+
+[node name="HBChill3" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
+margin_top = 72.0
+margin_right = 121.0
+margin_bottom = 104.0
+
+[node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3"]
+margin_right = 93.0
+margin_bottom = 32.0
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3/CCCLabel"]
+margin_right = 93.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 12 )
+text = "Bouquet2"
+
+[node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3"]
+margin_left = 97.0
+margin_right = 121.0
+margin_bottom = 32.0
+
+[node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3/CCCPlay"]
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 27.0
+texture_normal = ExtResource( 8 )
+
+[node name="HBChill4" type="HBoxContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill"]
+margin_top = 108.0
+margin_right = 121.0
+margin_bottom = 140.0
+
+[node name="CCCLabel" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4"]
+margin_right = 93.0
+margin_bottom = 32.0
+
+[node name="LabelTitle2" type="Label" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4/CCCLabel"]
+margin_right = 93.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 12 )
+text = "Bouquet2"
+
+[node name="CCCPlay" type="CenterContainer" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4"]
+margin_left = 97.0
+margin_right = 121.0
+margin_bottom = 32.0
+
+[node name="TBCPlay" type="TextureButton" parent="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4/CCCPlay"]
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = 27.0
@@ -734,13 +815,16 @@ autoplay = true
 [connection signal="pressed" from="HBoxContainer/VBCMenu/MGQuit/TBQuit" to="." method="_on_TBQuit_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBCPlaymode/MGTime/TBTime" to="." method="_on_TBTime_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBCPlaymode/MGChill/TBChill" to="." method="_on_TBChill_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel" to="." method="_on_TBLevel_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel2" to="." method="_on_TBLevel_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel3" to="." method="_on_TBLevel_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel4" to="." method="_on_TBLevel_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel5" to="." method="_on_TBLevel_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel6" to="." method="_on_TBLevel_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCPlay/TBCPlay" to="." method="_on_TBCPlay_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel" to="." method="_on_TBLevel_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel2" to="." method="_on_TBLevel_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel3" to="." method="_on_TBLevel_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel4" to="." method="_on_TBLevel_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel5" to="." method="_on_TBLevel_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="HBoxContainer/VBCTimemode/CCLevel/GCLevel/TBLevel6" to="." method="_on_TBLevel_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill/CCCPlay/TBCPlay" to="." method="_on_TBCPlay_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill2/CCCPlay/TBCPlay" to="." method="_on_TBCPlay_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill3/CCCPlay/TBCPlay" to="." method="_on_TBCPlay_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="HBoxContainer/VBCChillmode/CCChill/VBCChill/HBChill4/CCCPlay/TBCPlay" to="." method="_on_TBCPlay_pressed" binds= [ 3 ]]
 [connection signal="pressed" from="BtnMenu" to="." method="_on_BtnMenu_pressed"]
 [connection signal="pressed" from="BtnMenu2" to="." method="_on_BtnMenu_pressed"]
 [connection signal="pressed" from="BtnMenu3" to="." method="_on_BtnMenu_pressed"]

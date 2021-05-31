@@ -47,3 +47,6 @@ func _on_ButtonNext_pressed():
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()
+
+func _on_HomeButton_pressed():
+	get_tree().change_scene("res://scenes/interface/main.tscn")

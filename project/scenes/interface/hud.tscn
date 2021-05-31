@@ -343,7 +343,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HomeButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -54.0
+margin_top = -44.0
+margin_right = -2.0
+margin_bottom = 6.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="NPRModal/VBCModal/HBCButtons/ButtonReset" to="." method="_on_ButtonReset_pressed"]
 [connection signal="pressed" from="NPRModal/VBCModal/HBCButtons/ButtonHome" to="." method="_on_ButtonHome_pressed"]
 [connection signal="pressed" from="NPRModal/VBCModal/HBCButtons/ButtonNext" to="." method="_on_ButtonNext_pressed"]
 [connection signal="pressed" from="NPRModal/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

@@ -1,7 +1,7 @@
 extends Control
 
-export(Array, PackedScene) var time_levels
-export(Array, PackedScene) var chill_levels
+export(Array, String) var time_levels
+export(Array, String) var chill_levels
 
 func _ready():
 	$AnimationPlayer.play("GO_UIMENU")
@@ -24,8 +24,8 @@ func _on_TBTime_pressed():
 func _on_TBChill_pressed():
 		$AnimationPlayer.play("GO_UICHILLMODE")
 
-func _on_TBLevel_pressed():
-	print("S")
+func _on_TBLevel_pressed(index):
+	get_tree().change_scene(time_levels[index])
 
-func _on_TBCPlay_pressed():
-	print("L")
+func _on_TBCPlay_pressed(index):
+	get_tree().change_scene(chill_levels[index])
