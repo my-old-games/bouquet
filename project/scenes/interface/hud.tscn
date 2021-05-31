@@ -89,7 +89,7 @@ position = Vector2( -4, 0 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 5 )
 animation = "IDLE"
-frame = 3
+frame = 1
 playing = true
 centered = false
 
@@ -274,16 +274,16 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 200, 300 )
-custom_constants/separation = 25
+custom_constants/separation = 20
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CCTitle" type="CenterContainer" parent="NPRModal/VBCModal"]
-margin_top = 27.0
+margin_top = 32.0
 margin_right = 200.0
-margin_bottom = 72.0
+margin_bottom = 77.0
 
 [node name="LabelTitle" type="Label" parent="NPRModal/VBCModal/CCTitle"]
 margin_left = 44.0
@@ -307,9 +307,9 @@ margin_bottom = 100.0
 texture = ExtResource( 12 )
 
 [node name="HBCButtons" type="HBoxContainer" parent="NPRModal/VBCModal"]
-margin_top = 222.0
+margin_top = 217.0
 margin_right = 200.0
-margin_bottom = 272.0
+margin_bottom = 267.0
 rect_min_size = Vector2( 200, 50 )
 custom_constants/separation = 4
 alignment = 1

@@ -15,7 +15,7 @@
 ]]
 script = ExtResource( 3 )
 flowers = [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ]
-time = 60
+time = 10
 time_mode = true
 theme = "Minuet in G Major, WoO 10, No. 2"
 
@@ -82,7 +82,7 @@ bouquet = {
 "flowers": [ "F0", "F1", "F2" ],
 "goal": 1,
 "pattern": [ "F0", "F1", "F2" ],
-"quantity": [ 6, 4, 8 ]
+"quantity": [ 1, 1, 1 ]
 }
 
 [node name="Flowers" type="Node2D" parent="."]

@@ -27,7 +27,8 @@ func _ready():
 func _picked_handler(tag):
 	picked += 1
 	if time_mode: 
-		print(check_goals(tag))
+		if check_goals(tag):
+			$HUD.showModal(true)
 	else:
 		time += 3
 
@@ -88,4 +89,8 @@ func _on_Clock_timeout():
 	$HUD.set_timer_count(time)
 	if time == 0:
 		$Clock.stop()
-		print('GAME OVER')
+		if time_mode: 
+			if !is_win():
+				$HUD.showModal(false)
+		else:
+			$HUD.showModal(true)

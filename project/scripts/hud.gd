@@ -1,5 +1,17 @@
 extends CanvasLayer
 # ---------------------- FUNCTIONS ----------------------
+func _ready():
+	$NPRModal.hide()
+
+func showModal(win):
+	if win:
+		$NPRModal/VBCModal/CCTitle/LabelTitle.text = "Victory"
+	else:
+		$NPRModal/VBCModal/CCTitle/LabelTitle.text = "Game Over"
+		$NPRModal/VBCModal/HBCButtons/ButtonNext.hide()
+		$NPRModal/VBCModal/CCBouquet.modulate = Color(0,0,0)
+	$NPRModal.show()
+
 func set_flowers_count(score, tag):
 	match tag:
 		"F0":
@@ -24,15 +36,14 @@ func update_basket(anim):
 func hide_goals():
 	$HBCFlowers.hide()
 
-
 func _on_ButtonReset_pressed():
-	print('Reset')
+	get_tree().reload_current_scene()
 
 func _on_ButtonHome_pressed():
-	print('Home')
+	get_tree().change_scene("res://scenes/interface/main.tscn")
 
 func _on_ButtonNext_pressed():
-	print('Next')
+	get_tree().change_scene("res://scenes/interface/main.tscn")
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()
