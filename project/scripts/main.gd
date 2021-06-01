@@ -3,7 +3,10 @@ extends Control
 export(Array, String) var time_levels
 export(Array, String) var chill_levels
 
+var selected
+
 func _ready():
+	selected = false
 	$AnimationPlayer.play("GO_UIMENU")
 
 func _on_TBPlay_pressed():
@@ -29,3 +32,19 @@ func _on_TBLevel_pressed(index):
 
 func _on_TBCPlay_pressed(index):
 	get_tree().change_scene(chill_levels[index])
+
+
+func _on_TSBB_pressed():
+	selected = true
+
+func _on_TSBT_pressed():
+	if selected:
+		if $Flower.frame > 5 and $Flower.frame < 12:
+			$Hand.play('OK')
+		else:
+			$Hand.play('FAIL')
+		selected = false
+
+
+func _on_Hand_animation_finished():
+	$Hand.play('IDLE')
