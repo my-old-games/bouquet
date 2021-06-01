@@ -9,16 +9,16 @@
 [ext_resource path="res://scenes/flowers/flower.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/flowers/flowerf1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/flowers/flowerf2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/levels/chill/level2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/levels/chill/level4.tscn" type="PackedScene" id=10]
 
-[node name="Level1" type="Node2D" groups=[
+[node name="Level5" type="Node2D" groups=[
 "levels",
 ]]
 script = ExtResource( 1 )
 flowers = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 next_level = ExtResource( 10 )
 time = 20
-theme = "Etude Op. 25 no. 9  - Butterfly"
+theme = "Etude Op. 25 no. 9 Butterfly"
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -35,40 +35,43 @@ position = Vector2( 346.949, 475.51 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="Hole" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 67.125, 160 )
+position = Vector2( 101.63, 193.903 )
 
 [node name="Hole2" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 110.823, 186.274 )
+position = Vector2( 53.0625, 160 )
 
 [node name="Hole3" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 174, 203 )
-
-[node name="Hole4" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 238.063, 233.274 )
+position = Vector2( 195.88, 194.783 )
 
 [node name="Hole5" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 192, 256 )
+position = Vector2( 234, 160 )
 
 [node name="Hole6" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 128, 288 )
+position = Vector2( 142.949, 233.274 )
 
 [node name="Hole7" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 64, 323 )
+position = Vector2( 224, 288 )
 
 [node name="Hole8" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 125.012, 352 )
+position = Vector2( 67.125, 288 )
 
 [node name="Hole9" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 174.823, 384 )
+position = Vector2( 142.949, 320 )
 
 [node name="Hole10" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 220.125, 415.274 )
+position = Vector2( 227, 352 )
+
+[node name="Hole11" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 64, 352 )
+
+[node name="Hole12" parent="Holes" instance=ExtResource( 4 )]
+position = Vector2( 142.949, 384 )
 
 [node name="Hole13" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 44, 448 )
+position = Vector2( 32, 416 )
 
 [node name="Hole14" parent="Holes" instance=ExtResource( 4 )]
-position = Vector2( 94, 406 )
+position = Vector2( 256, 416 )
 
 [node name="Bouquets" type="Node2D" parent="."]
 
