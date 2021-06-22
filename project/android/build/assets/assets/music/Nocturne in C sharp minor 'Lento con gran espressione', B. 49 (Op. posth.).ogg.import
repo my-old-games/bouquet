@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Nocturne in C sharp minor 'Lento con gran espressione', B. 49 (Op. posth.).ogg-98a10febb5a3aa869575f8c5bf138457.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Nocturne in C sharp minor 'Lento con gran espressione', B. 49 (Op. posth.).ogg"
+dest_files=[ "res://.import/Nocturne in C sharp minor 'Lento con gran espressione', B. 49 (Op. posth.).ogg-98a10febb5a3aa869575f8c5bf138457.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

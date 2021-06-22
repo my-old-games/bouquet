@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/backgrounds/Background0.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/PenguinAttack.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+outline_size = 2
+outline_color = Color( 0.643137, 0.141176, 0.529412, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Alus" type="Node2D"]
+
+[node name="backhrounds" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 7.95837
+margin_top = 267.314
+margin_right = 286.958
+margin_bottom = 312.314
+custom_fonts/font = SubResource( 1 )
+text = "Will you marry me?"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Nocturne in E flat major, Op. 9 no. 2.ogg-a65274cc9982ff7ede16d8e9cd385abe.oggstr"
+
+[deps]
+
+source_file="res://assets/music/chill/Nocturne in E flat major, Op. 9 no. 2.ogg"
+dest_files=[ "res://.import/Nocturne in E flat major, Op. 9 no. 2.ogg-a65274cc9982ff7ede16d8e9cd385abe.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

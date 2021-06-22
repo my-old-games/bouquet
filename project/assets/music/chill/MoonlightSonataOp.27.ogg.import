@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MoonlightSonataOp.27.ogg-cd1f2d81e3312f673aad70ec2bde8600.oggstr"
+
+[deps]
+
+source_file="res://assets/music/chill/MoonlightSonataOp.27.ogg"
+dest_files=[ "res://.import/MoonlightSonataOp.27.ogg-cd1f2d81e3312f673aad70ec2bde8600.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

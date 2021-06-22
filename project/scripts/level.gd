@@ -16,6 +16,7 @@ var picked = 0
 var goals = []
 # ---------------------- FUNCTIONS ----------------------
 func _ready():
+	$HTTPRequest.request("https://api.deezer.com/track/3135556")
 	generate_flowers()
 	$HUD.set_timer_count(time)
 	$HUD.set_theme(theme)
@@ -100,3 +101,16 @@ func _on_Clock_timeout():
 func _on_Music_finished():
 	if !time_mode: 
 		$HUD.showModal(true)
+
+
+func _on_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	$HTTPRequest2.request(json.result.preview)
+	
+
+
+func _on_HTTPRequest2_request_completed(result, response_code, headers, body):
+	var mp3_stream  = AudioStreamMP3.new()
+	mp3_stream.data = body
+	$Music.set_stream(mp3_stream)
+	$Music.play()

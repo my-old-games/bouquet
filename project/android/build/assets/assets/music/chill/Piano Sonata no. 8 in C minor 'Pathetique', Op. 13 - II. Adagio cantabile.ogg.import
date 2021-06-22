@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - II. Adagio cantabile.ogg-ad25f03dea8bd75e379fd5e84e2e4572.oggstr"
+
+[deps]
+
+source_file="res://assets/music/chill/Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - II. Adagio cantabile.ogg"
+dest_files=[ "res://.import/Piano Sonata no. 8 in C minor 'Pathetique', Op. 13 - II. Adagio cantabile.ogg-ad25f03dea8bd75e379fd5e84e2e4572.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

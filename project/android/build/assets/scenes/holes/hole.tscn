@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/images/holes/Hole.png" type="Texture" id=1]
+
+[node name="Hole" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.5625, 1.77405 )
+texture = ExtResource( 1 )

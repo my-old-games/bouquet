@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Nocturne in B major, Op. 9 no. 3.ogg-feeecc9ade12d13b2479954ea82da30d.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Nocturne in B major, Op. 9 no. 3.ogg"
+dest_files=[ "res://.import/Nocturne in B major, Op. 9 no. 3.ogg-feeecc9ade12d13b2479954ea82da30d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
