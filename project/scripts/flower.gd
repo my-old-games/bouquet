@@ -21,8 +21,9 @@ signal picked
 func _ready():
 	if root_level != null and root_level.is_in_group("levels"):
 		self.connect("picked", root_level, "_picked_handler")
+		root_level.connect("started",self,"_start_handler")
 		#rng.randomize()
-		live()
+		#live()
 
 func _on_TimerGrow_timeout():
 	$AnimationPlayer.play("GROW")
@@ -88,5 +89,6 @@ func _on_Tween_tween_completed(object, key):
 func _on_TimerReset_timeout():
 	show()
 	live()
-	
-	
+
+func _start_handler():
+	live()

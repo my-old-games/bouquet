@@ -5,6 +5,7 @@ export(PackedScene) var next_level
 export(int)    var time
 export(bool)   var time_mode
 export(String) var theme
+export(String) var song
 # ---------------------- ONREADY VAR ----------------------
 onready var score = 0
 onready var basket_position = $HUD.basket_position()
@@ -14,9 +15,11 @@ onready var holes = $Holes.get_children()
 var rng = RandomNumberGenerator.new()
 var picked = 0
 var goals = []
+# ---------------------- SIGNALS -----------------------
+signal started
 # ---------------------- FUNCTIONS ----------------------
 func _ready():
-	$HTTPRequest.request("https://api.deezer.com/track/3135556")
+	$APIWikipedia.getSong(song)
 	generate_flowers()
 	$HUD.set_timer_count(time)
 	$HUD.set_theme(theme)
@@ -24,7 +27,6 @@ func _ready():
 		set_flowers_goals()
 	else:
 		$HUD.hide_goals()
-
 
 func _picked_handler(tag):
 	picked += 1
@@ -85,7 +87,7 @@ func is_win():
 		if goal > 0:
 			return false
 	return true
-
+# ---------------------- HANDLERS ----------------------
 func _on_Clock_timeout():
 	time -= 1
 	$HUD.set_timer_count(time)
@@ -102,15 +104,10 @@ func _on_Music_finished():
 	if !time_mode: 
 		$HUD.showModal(true)
 
-
-func _on_request_completed(result, response_code, headers, body):
-	var json = JSON.parse(body.get_string_from_utf8())
-	$HTTPRequest2.request(json.result.preview)
-	
-
-
-func _on_HTTPRequest2_request_completed(result, response_code, headers, body):
-	var mp3_stream  = AudioStreamMP3.new()
-	mp3_stream.data = body
+func _on_APIWikipedia_got_song(stream_data):
+	var mp3_stream  = AudioStreamOGGVorbis.new()
+	mp3_stream.data = stream_data
 	$Music.set_stream(mp3_stream)
 	$Music.play()
+	$Clock.start()
+	emit_signal("started")
