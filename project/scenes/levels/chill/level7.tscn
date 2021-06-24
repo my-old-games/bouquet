@@ -29,12 +29,6 @@ centered = false
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
-[node name="TestBasket" type="Node2D" parent="."]
-position = Vector2( 142.949, 475.51 )
-
-[node name="TestTrash" type="Node2D" parent="."]
-position = Vector2( 346.949, 475.51 )
-
 [node name="Holes" type="Node" parent="."]
 
 [node name="Hole" parent="Holes" instance=ExtResource( 4 )]
@@ -104,6 +98,9 @@ z_index = 3
 stream = ExtResource( 3 )
 
 [node name="APIWikipedia" parent="." instance=ExtResource( 12 )]
+
+[node name="TestTrash" type="Position2D" parent="."]
+position = Vector2( 384, 288 )
 
 [connection signal="timeout" from="Clock" to="." method="_on_Clock_timeout"]
 [connection signal="finished" from="Music" to="." method="_on_Music_finished"]

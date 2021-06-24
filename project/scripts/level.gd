@@ -97,8 +97,8 @@ func _on_Clock_timeout():
 			if !is_win():
 				$HUD.showModal(false)
 		else:
-			$HUD.showModal(true)
-
+			if $Music.is_playing():
+				$HUD.showModal(false)
 
 func _on_Music_finished():
 	if !time_mode: 
